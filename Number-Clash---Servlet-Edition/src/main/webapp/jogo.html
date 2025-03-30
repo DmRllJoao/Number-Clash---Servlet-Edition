@@ -2,26 +2,31 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="styles/jogo.css">
 <title></title>
 </head>
 <body>
-	<form>
+	<form action="JogoServlet" method="post">
 		<h1>Number Clash</h1>
+		
 		<label>Nome do Jogador 1:</label>
-		<input type="text" placeholder="Jogador 1">	
+		<input type="text" placeholder="Jogador 1" name="jogador1">	
 		<label>Digite o número:</label>
-		<input type="text" placeholder="Valor Jogador 1">
+		<input type="text" placeholder="Valor Jogador 1" name="valor1">
 		
 		<br><br>
-		<label>Nome do Jogador 2:</label>
-		<input type="text" placeholder="Jogador 2">
+		
+		<label>Nome do jogador 2:</label>
+		<input type="text" placeholder="Jogador 2" name="jogador2">
 		<label>Digite o número:</label>
-		<input type="text" placeholder="Valor Jogador 2">
+		<input type="text" placeholder="Valor Jogador 2" name="valor2">
 	
 		<br><br>
-		<button>Adicionar</button>
+		<button type="submit">Adicionar</button>
 		<br><br>
-		<table border="1">
+		
+	</form>
+	<table border="1">
 			<tr>
 				<th>Jogador 1</th>
 				<th>Jogador 2</th>
@@ -30,10 +35,10 @@
 				<td>Pedro</td>
 				<td>Jubileu</td>
 			</tr>
-				<td>10</td>
-				<td>30</td>
 			<tr>
+				<td>20</td>
+				<td>50</td>
+			</tr>
 		</table>
-	</form>
 </body>
 </html>
