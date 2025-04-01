@@ -35,30 +35,10 @@ public class JogoServlet extends HttpServlet {
             jogo.setResultado("Empate");
         }
         
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        out.println("<html><head><title>Jogo</title>");
-        out.println("<html><head>");
-        out.println("<title>Jogo</title>");
-        out.println("<link rel='stylesheet' type='text/css' href='styles/jogo.css'>"); 
-        out.println("</head><body>");
-        out.println("<h1>Jogo</h1>");
-        out.println("<form action='JogoServlet' method='post'>");
-        out.println("<label>Nome do Jogador 1:</label> <input type='text' name='jogador1'><br>");
-        out.println("<label>Valor do Jogador 1:</label> <input type='number' name='valor1'><br>");
-        out.println("<label>Nome do Jogador 2:</label> <input type='text' name='jogador2'><br>");
-        out.println("<label>Valor do Jogador 2:</label> <input type='number' name='valor2'><br>");
-        out.println("<button type='submit'>Jogar</button>");
-        out.println("</form>");
-        
-        out.println("<h2>Resultado:</h2>");
-        out.println("<ul>");
-        out.println("<li>Jogador 1: " + jogo.getJogador1() + " (" + jogo.getValor1() + ")</li>");
-        out.println("<li>Jogador 2: " + jogo.getJogador2() + " (" + jogo.getValor2() + ")</li>");
-        out.println("<li>" + jogo.getResultado() + "</li>");
-        out.println("</ul>");
-        
-        out.println("<a href='index.html'>Voltar</a>");
-        out.println("</body></html>");
+     // Adicionar atributos na requisição
+        request.setAttribute("jogo", jogo);
+
+        // Encaminhar para o JSP
+        request.getRequestDispatcher("resultado.jsp").forward(request, response);
     }
 }
